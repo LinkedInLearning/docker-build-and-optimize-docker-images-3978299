@@ -8,3 +8,10 @@ docker search node
 
 docker pull node
 
+************************************
+*** 01_04 Building Custom Images ***
+************************************
+
+docker build -t docker-image-demo .
+
+docker run -p 3000:3000 docker-image-demo
