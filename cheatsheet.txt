@@ -15,3 +15,14 @@ docker pull node
 docker build -t docker-image-demo .
 
 docker run -p 3000:3000 docker-image-demo
+
+****************************************************
+*** 01-05 Challenge: Finding and Building Images ***
+****************************************************
+
+- Find the latest tagged version of the official node alpine image
+- Copy the image name and version for the latest version
+- Update the Dockerfile with the new image version
+- Run the Docker build command and tag the image node-app
+- Extra Credit: Run the web app using the docker run command 
+  with the port mapping on port 3000 in the container and port 3000 on the host
