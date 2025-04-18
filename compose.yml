@@ -1,14 +1,8 @@
 services:
   web:
-    #image: docker-image-demo:2.3.1
-    image: node-app:2.3.2
+    image: docker-image-demo:2.3.1
     build:
       context: .
       dockerfile: Dockerfile
-      #target: production
-      labels:
-        - org.opencontainers.image.licenses=MIT
-        - org.opencontainers.image.version=2.3.2
-        - com.example.project.environment=development
     ports:
       - "3000:3000"
