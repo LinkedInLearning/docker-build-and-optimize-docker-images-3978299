@@ -4,5 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      labels:
+        - org.opencontainers.image.licenses=MIT
     ports:
       - "3000:3000"

@@ -11,5 +11,9 @@ RUN npm ci
 # Copy application code
 COPY app .
 
+# Add labels
+LABEL org.opencontainers.image.title="Node App" \
+      org.opencontainers.image.version="2.3.1"
+
 # Start the application
 CMD ["npm", "start"]
