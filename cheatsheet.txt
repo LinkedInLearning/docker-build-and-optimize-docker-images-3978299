@@ -26,3 +26,17 @@ docker run -p 3000:3000 docker-image-demo
 - Run the Docker build command and tag the image node-app
 - Extra Credit: Run the web app using the docker run command 
   with the port mapping on port 3000 in the container and port 3000 on the host
+
+***************************************************
+*** 01-06 Solution: Finding and Building Images ***
+***************************************************
+
+https://hub.docker.com
+
+https://hub.docker.com/search?q=node&badges=official
+
+https://hub.docker.com/_/node/tags?name=alpine
+
+docker build -t node-app .
+
+docker run -p 3000:3000 node-app
