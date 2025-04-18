@@ -40,3 +40,33 @@ https://hub.docker.com/_/node/tags?name=alpine
 docker build -t node-app .
 
 docker run -p 3000:3000 node-app
+
+***********************************
+*** 02-02 Tagging Docker Images ***
+***********************************
+
+docker build -t docker-image-demo:1.0 .
+
+docker build -t docker-image-demo .   # same as docker-image-demo:latest
+
+docker tag docker-image-demo docker-image-demo:2.0
+
+docker tag docker-image-demo:2.0  docker-image-demo:2.3.1
+
+docker tag docker-image-demo:2.0 docker-image-demo:main
+
+docker tag docker-image-demo:2.0 docker-image-demo:prod
+
+docker tag docker-image-demo:2.0 docker-image-demo:commit-abc123
+
+https://docs.docker.com/build/ci/github-actions/
+
+docker tag docker-image-demo:2.0 docker-image-demo:2025-08-01-abc123
+
+docker tag docker-image-demo:2.0 docker-image-demo:2.3.1 
+
+docker tag docker-image-demo:2.0 docker-image-demo:prod 
+
+docker tag docker-image-demo:2.0 docker-image-demo:2025-04-08-abc123
+
+docker tag docker-image-demo:2.0 docker-image-demo:2.0.1-beta
