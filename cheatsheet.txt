@@ -70,3 +70,13 @@ docker tag docker-image-demo:2.0 docker-image-demo:prod
 docker tag docker-image-demo:2.0 docker-image-demo:2025-04-08-abc123
 
 docker tag docker-image-demo:2.0 docker-image-demo:2.0.1-beta
+
+************************************
+*** 02-03 Labeling Docker Images ***
+************************************
+
+docker build -t docker-image-demo:2.3.1 .
+
+docker build -t docker-image-demo:2.3.1 --label “com.example.project.environment=staging" --label “org.opencontainers.image.authors=Shelley Benhoff” .
+
+docker compose build
