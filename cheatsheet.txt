@@ -80,3 +80,13 @@ docker build -t docker-image-demo:2.3.1 .
 docker build -t docker-image-demo:2.3.1 --label “com.example.project.environment=staging" --label “org.opencontainers.image.authors=Shelley Benhoff” .
 
 docker compose build
+
+******************************************
+*** 02-04 Working with Tags and Labels ***
+******************************************
+
+docker images
+
+docker inspect docker-image-demo:2.3.1 --format='{{json .Config.Labels}}'
+
+docker images --filter "label=org.opencontainers.image.version=2.3.1"
