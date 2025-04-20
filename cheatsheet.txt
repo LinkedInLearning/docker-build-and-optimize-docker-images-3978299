@@ -95,20 +95,21 @@ docker images --filter "label=org.opencontainers.image.version=2.3.1"
 *** 02-05 Working with an Image Repository ***
 **********************************************
 
-docker tag docker-image-demo:2.3.1 sbenhoff/docker-image-demo:2.3.1
+docker tag docker-image-demo:2.3.1 [username]/docker-image-demo:2.3.1
 
 docker login
 
-docker push sbenhoff/docker-image-demo:2.3.1
+docker push [username]/docker-image-demo:2.3.1
 
-docker pull sbenhoff/docker-image-demo:2.3.1
+docker pull [username]/docker-image-demo:2.3.1
 
 ***********************************************************
 *** 02-06 Challenge: Tagging and Labeling Docker Images ***
 ***********************************************************
 
-- Tag your local node-app image with version 2.3.2
-- Add 2 labels to the node-app image:
+- Tag your local [username]/docker-image-demo:2.3.1 image with version 2.3.2
+  Update compose.yml with the new image version
+- Add 2 labels to the [username]/docker-image-demo:2.3.2 image:
   org.opencontainers.image.version=2.3.2
   com.example.project.environment=development
 - Build the image
@@ -118,14 +119,14 @@ docker pull sbenhoff/docker-image-demo:2.3.1
 *** 02-07 Solution: Tagging and Labeling Docker Images ***
 **********************************************************
 
-docker build -t node-app:2.3.2 .
+docker build -t [username]/docker-image-demo:2.3.2 .
 
-docker tag node-app node-app:2.3.2
+docker tag [username]/docker-image-demo:2.3.1 [username]/docker-image-demo:2.3.2
 
-docker build -t node-app:2.3.2 --label “org.opencontainers.image.version=2.3.2” --label “com.example.project.environment=development" .
+docker build -t [username]/docker-image-demo:2.3.2 --label “org.opencontainers.image.version=2.3.2” --label “com.example.project.environment=development" .
 
 docker compose build
 
-docker build -t node-app:2.3.2 .
+docker build -t [username]/docker-image-demo:2.3.2 .
 
-docker inspect node-app:2.3.2 --format='{{json .Config.Labels}}'
+docker inspect [username]/docker-image-demo:2.3.2 --format='{{json .Config.Labels}}'

@@ -1,7 +1,6 @@
 services:
   web:
-    #image: docker-image-demo:2.3.1
-    image: node-app:2.3.2
+    image: sbenhoff/docker-image-demo:2.3.2
     build:
       context: .
       dockerfile: Dockerfile
