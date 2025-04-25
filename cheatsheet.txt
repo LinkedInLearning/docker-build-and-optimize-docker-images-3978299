@@ -135,8 +135,8 @@ docker inspect [username]/docker-image-demo:2.3.2 --format='{{json .Config.Label
 *** 03-03 Building Images using Image Caching Options ***
 *********************************************************
 
-docker build --no-cache -t sbenhoff/docker-image-demo:2.3.2 .
+docker build --no-cache -t [username]/docker-image-demo:2.3.2 .
 
-docker build --pull -t sbenhoff/docker-image-demo:2.3.2 .
+docker build --pull -t [username]/docker-image-demo:2.3.2 .
 
-docker build --cache-from sbenhoff/docker-image-demo:2.3.1 -t sbenhoff/docker-image-demo:2.3.2 .
+docker build --cache-from [username]/docker-image-demo:2.3.1 -t [username]/docker-image-demo:2.3.2 .
