@@ -13,7 +13,7 @@ COPY app .
 
 # Add labels
 LABEL org.opencontainers.image.title="Node App" \
-      org.opencontainers.image.version=2.3.2 \
+      org.opencontainers.image.version=2.3.3 \
       com.example.project.environment=development  
 
 # Start the application

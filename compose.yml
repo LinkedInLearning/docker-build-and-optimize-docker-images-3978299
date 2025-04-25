@@ -1,12 +1,12 @@
 services:
   web:
-    image: sbenhoff/docker-image-demo:2.3.2
+    image: sbenhoff/docker-image-demo:2.3.3
     build:
       context: .
       dockerfile: Dockerfile
       labels:
         - org.opencontainers.image.licenses=MIT
-        - org.opencontainers.image.version=2.3.2
+        - org.opencontainers.image.version=2.3.3
         - com.example.project.environment=development
     ports:
       - "3000:3000"
