@@ -181,3 +181,9 @@ https://hub.docker.com/_/node/tags
 https://hub.docker.com/_/node/tags?name=current-alpine
 
 https://hub.docker.com/_/node
+
+****************************************************
+*** 04-02 Incorporating Basic Security Practices ***
+****************************************************
+
+docker build -t sbenhoff/docker-image-demo:2.3.2 .

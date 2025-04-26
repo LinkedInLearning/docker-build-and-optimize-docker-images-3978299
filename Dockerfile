@@ -8,8 +8,16 @@ WORKDIR /app
 COPY app/package*.json ./
 RUN npm ci
 
-# Copy application code
+# Create a non-root group and user
+RUN addgroup -S appgroup \
+ && adduser  -S appuser -G appgroup
+
+# Copy application code and adjust ownership
 COPY app .
+RUN chown -R appuser:appgroup /app
+
+# Switch to the non-root user
+USER appuser
 
 # Add labels
 LABEL org.opencontainers.image.title="Node App" \
