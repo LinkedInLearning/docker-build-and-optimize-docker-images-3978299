@@ -131,23 +131,20 @@ docker build -t [username]/docker-image-demo:2.3.2 .
 
 docker inspect [username]/docker-image-demo:2.3.2 --format='{{json .Config.Labels}}'
 
-*********************************************************
-*** 03-03 Building Images using Image Caching Options ***
-*********************************************************
+**************************************
+*** 03-03 Excluding Unneeded Files ***
+**************************************
+
+docker build -t sbenhoff/docker-image-demo:2.3.2 .
+
+docker run -p 3000:3000 sbenhoff/docker-image-demo:2.3.2
+
+***************************************************
+*** 03-04 Building Images using Caching Options ***
+***************************************************
 
 docker build --no-cache -t [username]/docker-image-demo:2.3.2 .
 
 docker build --pull -t [username]/docker-image-demo:2.3.2 .
 
 docker build --cache-from [username]/docker-image-demo:2.3.1 -t [username]/docker-image-demo:2.3.2 .
-
-*****************************************************
-*** 03-04 Challenge: Working with the Build Cache ***
-*****************************************************
-
-- Build the image for our project from scratch and tag it [username]/docker-image-demo:2.3.3
-- Build the image [username]/docker-image-demo:2.3.3 and pull in the latest changes from the base image
-- Build the image [username]/docker-image-demo:2.3.3 by sharing the build cache from the previous version 2.3.2
-- Extra Credit: Update the version labels that exist in the Dockerfile and compose.yml files
-  Update the image version in the compose file
-  Build the image [username]/docker-image-demo:2.3.3 again to incorporate these changes
