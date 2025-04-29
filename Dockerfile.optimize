@@ -5,36 +5,28 @@ FROM node:current-alpine3.21
 WORKDIR /app
 
 # 3. Copy package.json
-COPY app/package.json ./ 
+COPY app/package*.json ./ 
 
-# 4. Install dependencies
-RUN npm ci
+# 4. Install dependencies, Clear Alpine cache, Install a global tool (e.g., nodemon for dev)
+RUN npm ci \
+    && rm -rf /var/cache/apk/* \
+    && npm install -g nodemon
 
-# 5. Clear Alpine cache
-RUN rm -rf /var/cache/apk/*
+# 5. Create application group, Create application user, Fix ownership
+RUN addgroup -S appgroup \
+    && adduser -S appuser -G appgroup \
+    && chown -R appuser:appgroup /app
 
-# 6. Install a global tool (e.g., nodemon for dev)
-RUN npm install -g nodemon
-
-# 7. Create application group
-RUN addgroup -S appgroup
-
-# 8. Create application user
-RUN adduser -S appuser -G appgroup
-
-# 9. Fix ownership
-RUN chown -R appuser:appgroup /app
-
-# 10. Copy application source
+# 6. Copy application source
 COPY app .
 
-# 11. Switch to non-root user
+# 7. Switch to non-root user
 USER appuser
 
-# 12. Add labels
+# 8. Add labels
 LABEL org.opencontainers.image.title="Node App" \
-      org.opencontainers.image.version="2.3.3" \
+      org.opencontainers.image.version="2.3.4" \
       com.example.project.environment="development"
 
-# 13. Define default command
+# 9. Define default command
 CMD ["npm", "start"]
