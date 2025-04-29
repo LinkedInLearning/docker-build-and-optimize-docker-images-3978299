@@ -195,3 +195,16 @@ docker run -p 3000:3000 [username]/docker-image-demo:2.3.3
 **********************************************************
 
 docker build -t [username]/docker-image-demo:2.3.3 .
+
+************************************************
+*** 04-04 Challenge: Optimizing a Dockerfile ***
+************************************************
+
+- In the Dockerfile.optimize file, combine RUN instructions that are related to each other
+  You should have 2 RUN instructions when you're finished
+- Build the image and tag it [username]/docker-image-demo:2.3.4 to incorporate these changes
+  Use the -f flag to specify you are using Dockerfile.optimize 
+  (ex. docker build –f Dockerfile.optimize …)
+- Extra Credit: Update the version labels that exist in the Dockerfile and compose.yml files
+  Build the image again
+  Run a container to test that the image is working
