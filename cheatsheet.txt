@@ -186,4 +186,6 @@ https://hub.docker.com/_/node
 *** 04-02 Incorporating Basic Security Practices ***
 ****************************************************
 
-docker build -t sbenhoff/docker-image-demo:2.3.2 .
+docker build -t sbenhoff/docker-image-demo:2.3.3 .
+
+docker run -p 3000:3000 sbenhoff/docker-image-demo:2.3.3
