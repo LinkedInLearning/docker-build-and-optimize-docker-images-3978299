@@ -9,8 +9,8 @@ COPY app/package*.json ./
 RUN npm ci
 
 # Create a non-root group and user
-RUN addgroup -S appgroup \
- && adduser  -S appuser -G appgroup
+RUN addgroup -S appgroup 
+RUN adduser  -S appuser -G appgroup
 
 # Copy application code and adjust ownership
 COPY app .
