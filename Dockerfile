@@ -6,15 +6,15 @@ WORKDIR /app
 
 # Copy package files and install dependencies
 COPY app/package*.json ./
-RUN npm ci
+RUN npm ci && rm -rf /var/cache/apk/* 
 
 # Create a non-root group and user
-RUN addgroup -S appgroup 
-RUN adduser  -S appuser -G appgroup
+RUN addgroup -S appgroup \
+    && adduser  -S appuser -G appgroup \
+    && chown -R appuser:appgroup /app
 
 # Copy application code and adjust ownership
 COPY app .
-RUN chown -R appuser:appgroup /app
 
 # Switch to the non-root user
 USER appuser
