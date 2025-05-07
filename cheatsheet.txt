@@ -90,3 +90,15 @@ docker images
 docker inspect docker-image-demo:2.3.1 --format='{{json .Config.Labels}}'
 
 docker images --filter "label=org.opencontainers.image.version=2.3.1"
+
+**********************************************
+*** 02-05 Working with an Image Repository ***
+**********************************************
+
+docker tag docker-image-demo:2.3.1 [username]/docker-image-demo:2.3.1
+
+docker login
+
+docker push [username]/docker-image-demo:2.3.1
+
+docker pull [username]/docker-image-demo:2.3.1
