@@ -102,3 +102,15 @@ docker login
 docker push [username]/docker-image-demo:2.3.1
 
 docker pull [username]/docker-image-demo:2.3.1
+
+***********************************************************
+*** 02-06 Challenge: Tagging and Labeling Docker Images ***
+***********************************************************
+
+- Tag your local [username]/docker-image-demo:2.3.1 image with version 2.3.2
+  Update compose.yml with the new image version
+- Add 2 labels to the [username]/docker-image-demo:2.3.2 image:
+  org.opencontainers.image.version=2.3.2
+  com.example.project.environment=development
+- Build the image
+- Inspect the image and verify the labels
