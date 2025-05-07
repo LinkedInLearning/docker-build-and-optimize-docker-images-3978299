@@ -189,3 +189,9 @@ https://hub.docker.com/_/node
 docker build -t [username]/docker-image-demo:2.3.3 .
 
 docker run -p 3000:3000 [username]/docker-image-demo:2.3.3
+
+**********************************************************
+*** 04-03 Combining Commands & Maintaining Readability ***
+**********************************************************
+
+docker build -t [username]/docker-image-demo:2.3.3 .
