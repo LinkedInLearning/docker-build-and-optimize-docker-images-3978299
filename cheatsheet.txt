@@ -208,3 +208,11 @@ docker build -t [username]/docker-image-demo:2.3.3 .
 - Extra Credit: Run a container to test that the image is working 
   Map port 3000 on the host to port 3000 inside of the container 
   Navigate to localhost:3000 to confirm the application is running
+
+***********************************************
+*** 04-04 Solution: Optimizing a Dockerfile ***
+***********************************************
+
+docker build -f Dockerfile.optimize -t [username]/docker-image-demo:2.3.4 .
+
+docker run -p 3000:3000 [username]/docker-image-demo:2.3.4
