@@ -210,7 +210,7 @@ docker build -t [username]/docker-image-demo:2.3.3 .
   Navigate to localhost:3000 to confirm the application is running
 
 ***********************************************
-*** 04-04 Solution: Optimizing a Dockerfile ***
+*** 04-05 Solution: Optimizing a Dockerfile ***
 ***********************************************
 
 docker build -f Dockerfile.optimize -t [username]/docker-image-demo:2.3.4 .
