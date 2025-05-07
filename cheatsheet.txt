@@ -159,3 +159,15 @@ docker build --cache-from [username]/docker-image-demo:2.3.1 -t [username]/docke
 - Extra Credit: Update the version labels that exist in the Dockerfile and compose.yml files
   Update the image version in the compose file
   Build the image [username]/docker-image-demo:2.3.3 again to incorporate these changes
+
+****************************************************
+*** 03-06 Solution: Working with the Build Cache ***
+****************************************************
+
+docker build --no-cache -t [username]/docker-image-demo:2.3.3 .
+
+docker build --pull -t [username]/docker-image-demo:2.3.3 .
+
+docker build --cache-from [username]/docker-image-demo:2.3.2 -t [username]/docker-image-demo:2.3.3 .
+
+docker build -t [username]/docker-image-demo:2.3.3 .
