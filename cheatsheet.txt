@@ -114,3 +114,19 @@ docker pull [username]/docker-image-demo:2.3.1
   com.example.project.environment=development
 - Build the image
 - Inspect the image and verify the labels
+
+**********************************************************
+*** 02-07 Solution: Tagging and Labeling Docker Images ***
+**********************************************************
+
+docker build -t [username]/docker-image-demo:2.3.2 .
+
+docker tag [username]/docker-image-demo:2.3.1 [username]/docker-image-demo:2.3.2
+
+docker build -t [username]/docker-image-demo:2.3.2 --label “org.opencontainers.image.version=2.3.2” --label “com.example.project.environment=development" .
+
+docker compose build
+
+docker build -t [username]/docker-image-demo:2.3.2 .
+
+docker inspect [username]/docker-image-demo:2.3.2 --format='{{json .Config.Labels}}'
