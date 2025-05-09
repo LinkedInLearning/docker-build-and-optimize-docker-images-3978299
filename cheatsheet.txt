@@ -216,11 +216,3 @@ docker build -t [username]/docker-image-demo:2.3.3 .
 docker build -f Dockerfile.optimize -t [username]/docker-image-demo:2.3.4 .
 
 docker run -p 3000:3000 [username]/docker-image-demo:2.3.4
-
-********************************************
-*** 05-02 Setting Up a Multi-Stage Build ***
-********************************************
-
-docker build -t [username]/docker-image-demo:2.3.5 .
-
-docker run -p 3000:3000 [username]/docker-image-demo:2.3.5
