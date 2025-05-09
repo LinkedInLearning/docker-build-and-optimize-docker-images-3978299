@@ -271,3 +271,15 @@ CMD ["npm", "start"]
 ************************************************
 
 docker build -t [username]/docker-image-demo:2.3.5 .
+
+************************************************************
+*** 05-04 Challenge: Setting Up a Multi-Stage Dockerfile ***
+************************************************************
+
+- In the Dockerfile.optimize file, create the builder stage
+- Create the production stage using the base image node:current-alpine3.21
+- Build the image and tag it [username]/docker-image-demo:2.3.6 to incorporate these changes
+  Use the -f flag to specify you are using Dockerfile.optimize (ex. docker build –f Dockerfile.optimize …)
+- Extra Credit: Run a container to test that the image is working 
+  Map port 3000 on the host to port 3000 inside of the container 
+  Navigate to localhost:3000 to confirm the application is running
