@@ -265,3 +265,9 @@ LABEL org.opencontainers.image.title="Node App" \
 
 # Start the application
 CMD ["npm", "start"]
+
+************************************************
+*** 05-03 Reviewing Multi-Stage Build Output ***
+************************************************
+
+docker build -t [username]/docker-image-demo:2.3.5 .
