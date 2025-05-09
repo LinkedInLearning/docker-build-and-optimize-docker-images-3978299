@@ -1,5 +1,5 @@
-# Install and build everything
-FROM node:current-alpine3.21
+# Builder stage: Install and build everything
+FROM node:current-alpine3.21 AS builder
 
 # Set working directory
 WORKDIR /app
@@ -15,6 +15,9 @@ RUN npm ci \
 # Copy source so you could run build scripts here
 COPY app .
 # e.g., RUN npm run build
+
+# Production stage: runtime-only image
+FROM node:current-alpine3.21 AS production
 
 # Set working directory
 WORKDIR /app
