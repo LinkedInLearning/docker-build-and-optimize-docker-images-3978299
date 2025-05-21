@@ -326,3 +326,9 @@ docker run --rm -it --entrypoint sh [username]/docker-image-demo:2.3.7
   You should see an error saying that there’s an error on line 5 of the Dockerfile. Open Dockerfile.optimize and fix the syntax error.
 - Run the same docker build command again.
   You should see an error saying that the app folder wasn’t found. What would cause the app folder not to be copied in the image?
+
+***********************************************
+*** 06-04 Solution: Debugging Docker Images ***
+***********************************************
+
+docker build --no-cache -f Dockerfile.optimize -t [username]/docker-image-demo:2.3.8 .
