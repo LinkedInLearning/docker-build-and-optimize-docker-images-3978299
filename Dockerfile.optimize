@@ -2,7 +2,7 @@
 FROM node:current-alpine3.21 AS builder
 
 # Set working directory
-WORKDIRS /app
+WORKDIR /app
 
 # Copy package.json
 COPY app/package*.json ./
