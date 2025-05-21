@@ -302,7 +302,7 @@ docker build -t [username]/docker-image-demo:2.3.7 ./app
 
 docker build -t [username]/docker-image-demo:2.3.7 .
 
-docker build --no-cache -t docker-image-demo:2.3.7 .
+docker build --no-cache -t [username]/docker-image-demo:2.3.7 .
 
 **********************************************
 *** 06-02 Using Basic Debugging Techniques ***
@@ -317,3 +317,9 @@ docker build --target production -t [username]/docker-image-demo:2.3.7 .
 docker inspect [username]/docker-image-demo:2.3.7
 
 docker run --rm -it --entrypoint sh [username]/docker-image-demo:2.3.7
+
+************************************************
+*** 06-03 Challenge: Debugging Docker Images ***
+************************************************
+
+- 
