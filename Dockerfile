@@ -35,7 +35,7 @@ USER appuser
 
 # Add labels
 LABEL org.opencontainers.image.title="Node App" \
-      org.opencontainers.image.version=2.3.5 \
+      org.opencontainers.image.version=2.3.7 \
       com.example.project.environment=development  
 
 # Start the application
