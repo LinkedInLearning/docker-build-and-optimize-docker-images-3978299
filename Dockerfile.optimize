@@ -2,10 +2,10 @@
 FROM node:current-alpine3.21 AS builder
 
 # Set working directory
-WORKDIR /app
+WORKDIRS /app
 
 # Copy package.json
-COPY app/package*.json ./ 
+COPY app/package*.json ./
 
 # Install dependencies, Clear Alpine cache, Install a global tool (e.g., nodemon for dev)
 RUN npm ci \
@@ -39,7 +39,7 @@ USER appuser
 
 # Add labels
 LABEL org.opencontainers.image.title="Node App" \
-      org.opencontainers.image.version="2.3.6" \
+      org.opencontainers.image.version="2.3.8" \
       com.example.project.environment="development"
 
 # Define default command

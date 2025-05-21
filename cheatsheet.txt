@@ -302,7 +302,7 @@ docker build -t [username]/docker-image-demo:2.3.7 ./app
 
 docker build -t [username]/docker-image-demo:2.3.7 .
 
-docker build --no-cache -t docker-image-demo:2.3.7 .
+docker build --no-cache -t [username]/docker-image-demo:2.3.7 .
 
 **********************************************
 *** 06-02 Using Basic Debugging Techniques ***
@@ -317,3 +317,12 @@ docker build --target production -t [username]/docker-image-demo:2.3.7 .
 docker inspect [username]/docker-image-demo:2.3.7
 
 docker run --rm -it --entrypoint sh [username]/docker-image-demo:2.3.7
+
+************************************************
+*** 06-03 Challenge: Debugging Docker Images ***
+************************************************
+
+- Run a docker build command. Use the no cache option, specify the Dockerfile.optimize file, and tag your image with your username, docker-image-demo, and version 2.3.8.
+  You should see an error saying that there’s an error on line 5 of the Dockerfile. Open Dockerfile.optimize and fix the syntax error.
+- Run the same docker build command again.
+  You should see an error saying that the app folder wasn’t found. What would cause the app folder not to be copied in the image?
