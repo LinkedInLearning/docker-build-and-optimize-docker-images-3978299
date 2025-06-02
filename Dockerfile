@@ -1,5 +1,5 @@
 # 1. Builder stage: install and build everything
-FROM node:current-alpine3.21 AS builder
+FROM node:current-alpine3.22 AS builder
 
 # Set working directory
 WORKDIR /app
@@ -13,7 +13,7 @@ COPY app .
 # e.g., RUN npm run build
 
 # 2. Production stage: runtime-only image
-FROM node:current-alpine3.21 AS production
+FROM node:current-alpine3.22 AS production
 
 # Set working directory
 WORKDIR /app
