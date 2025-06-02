@@ -1,5 +1,5 @@
 # Install and build everything
-FROM node:current-alpine3.21
+FROM node:current-alpine3.22
 
 # Set working directory
 WORKDIR /app
